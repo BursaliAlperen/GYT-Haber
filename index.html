@@ -17,7 +17,7 @@
         }
         
         body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
             min-height: 100vh;
             color: #2d3748;
             line-height: 1.6;
@@ -29,15 +29,15 @@
             padding: 20px;
         }
 
-        /* Header - Modern & Basit */
+        /* Header - Yeşil & Beyaz */
         .header {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             border-radius: 20px;
             padding: 20px 30px;
             margin-bottom: 20px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(76, 175, 80, 0.1);
+            border: 1px solid rgba(76, 175, 80, 0.2);
         }
 
         .header-content {
@@ -55,7 +55,7 @@
         .logo-icon {
             width: 50px;
             height: 50px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #4caf50, #2e7d32);
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -67,13 +67,13 @@
         .logo-text {
             font-size: 28px;
             font-weight: 800;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #4caf50, #2e7d32);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .live-badge {
-            background: #ff4757;
+            background: #4caf50;
             color: white;
             padding: 4px 12px;
             border-radius: 20px;
@@ -87,7 +87,37 @@
             50% { opacity: 0.7; }
         }
 
-        /* Navigation - Basit & Modern */
+        /* Kategoriler - Yeşil & Beyaz */
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+            justify-content: center;
+        }
+
+        .category-btn {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(76, 175, 80, 0.2);
+            padding: 12px 20px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            color: #666;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .category-btn.active {
+            background: linear-gradient(135deg, #4caf50, #2e7d32);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+        }
+
+        /* Navigation - Yeşil & Beyaz */
         .nav-tabs {
             display: flex;
             background: rgba(255, 255, 255, 0.9);
@@ -95,6 +125,7 @@
             padding: 8px;
             margin: 20px 0;
             gap: 8px;
+            border: 1px solid rgba(76, 175, 80, 0.2);
         }
 
         .nav-tab {
@@ -111,13 +142,13 @@
         }
 
         .nav-tab.active {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #4caf50, #2e7d32);
             color: white;
             transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
         }
 
-        /* Haber Grid - Basit & Modern */
+        /* Haber Grid - Yeşil & Beyaz */
         .news-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -129,8 +160,8 @@
             background: rgba(255, 255, 255, 0.95);
             border-radius: 20px;
             padding: 0;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(76, 175, 80, 0.1);
+            border: 1px solid rgba(76, 175, 80, 0.2);
             transition: all 0.3s ease;
             cursor: pointer;
             overflow: hidden;
@@ -138,7 +169,7 @@
 
         .news-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 12px 40px rgba(76, 175, 80, 0.15);
         }
 
         .news-image {
@@ -155,7 +186,7 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #4caf50, #2e7d32);
             color: white;
             padding: 6px 12px;
             border-radius: 20px;
@@ -193,9 +224,9 @@
             gap: 6px;
         }
 
-        /* Breaking News - Modern */
+        /* Breaking News - Yeşil */
         .breaking-news {
-            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            background: linear-gradient(135deg, #4caf50, #388e3c);
             color: white;
             padding: 15px 20px;
             border-radius: 15px;
@@ -203,7 +234,7 @@
             display: flex;
             align-items: center;
             gap: 15px;
-            box-shadow: 0 4px 20px rgba(255, 107, 107, 0.4);
+            box-shadow: 0 4px 20px rgba(76, 175, 80, 0.4);
         }
 
         .breaking-icon {
@@ -221,36 +252,46 @@
             font-weight: 600;
         }
 
-        /* Reklam Alanları - Minimal */
+        /* Reklam Alanları - Daha Fazla */
         .ad-section {
             background: rgba(255, 255, 255, 0.9);
             border-radius: 15px;
             padding: 20px;
             margin: 30px 0;
             text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(76, 175, 80, 0.2);
+        }
+
+        .ad-section-small {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: center;
+            border: 1px solid rgba(76, 175, 80, 0.2);
         }
 
         .ad-label {
             font-size: 12px;
-            color: #666;
+            color: #4caf50;
             margin-bottom: 10px;
             text-transform: uppercase;
             letter-spacing: 1px;
+            font-weight: 600;
         }
 
         /* Loading Animation */
         .loading {
             text-align: center;
             padding: 60px 20px;
-            color: white;
+            color: #4caf50;
         }
 
         .loading-spinner {
             width: 50px;
             height: 50px;
-            border: 3px solid rgba(255, 255, 255, 0.3);
-            border-top: 3px solid white;
+            border: 3px solid rgba(76, 175, 80, 0.3);
+            border-top: 3px solid #4caf50;
             border-radius: 50%;
             animation: spin 1s linear infinite;
             margin: 0 auto 20px;
@@ -261,14 +302,14 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* Footer - Basit */
+        /* Footer - Yeşil & Beyaz */
         .footer {
             background: rgba(255, 255, 255, 0.9);
             border-radius: 20px;
             padding: 30px;
             margin-top: 40px;
             text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(76, 175, 80, 0.2);
         }
 
         .telegram-buttons {
@@ -279,7 +320,7 @@
         }
 
         .telegram-btn {
-            background: #0088cc;
+            background: #4caf50;
             color: white;
             padding: 12px 20px;
             border-radius: 10px;
@@ -293,11 +334,11 @@
         }
 
         .telegram-btn:hover {
-            background: #0077b3;
+            background: #388e3c;
             transform: translateY(-2px);
         }
 
-        /* Modal - Modern */
+        /* Modal - Yeşil & Beyaz */
         .modal {
             display: none;
             position: fixed;
@@ -320,13 +361,14 @@
             overflow-y: auto;
             position: relative;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            border: 2px solid #4caf50;
         }
 
         .close-modal {
             position: absolute;
             top: 20px;
             right: 20px;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(76, 175, 80, 0.8);
             color: white;
             width: 40px;
             height: 40px;
@@ -359,13 +401,17 @@
                 flex-direction: column;
             }
             
+            .categories {
+                flex-direction: column;
+            }
+            
             .modal-content {
                 margin: 20px;
                 max-width: calc(100% - 40px);
             }
         }
 
-        /* Scrollbar Styling */
+        /* Scrollbar Styling - Yeşil */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -376,13 +422,57 @@
         }
 
         ::-webkit-scrollbar-thumb {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #4caf50, #2e7d32);
             border-radius: 10px;
         }
 
         /* Kategori Iconları */
         .category-icon {
             font-size: 14px;
+        }
+
+        /* İletişim Bölümü */
+        .contact-section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 1px solid rgba(76, 175, 80, 0.2);
+        }
+
+        .contact-title {
+            color: #2e7d32;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px;
+            background: #f8fdf8;
+            border-radius: 12px;
+            border: 1px solid #e8f5e8;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #4caf50, #2e7d32);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
         }
     </style>
 </head>
@@ -393,7 +483,7 @@
             <div class="header-content">
                 <div class="logo">
                     <div class="logo-icon">
-                        <i class="fas fa-bolt"></i>
+                        <i class="fas fa-leaf"></i>
                     </div>
                     <div class="logo-text">GYT HABER</div>
                 </div>
@@ -403,16 +493,41 @@
             </div>
         </header>
 
-        <!-- Navigation Tabs -->
-        <div class="nav-tabs">
-            <button class="nav-tab active" data-category="all">
+        <!-- Kategoriler -->
+        <div class="categories">
+            <button class="category-btn active" data-category="all">
                 <i class="fas fa-globe"></i> Tümü
             </button>
-            <button class="nav-tab" data-category="turkey">
+            <button class="category-btn" data-category="technology">
+                <i class="fas fa-microchip"></i> Teknoloji
+            </button>
+            <button class="category-btn" data-category="economy">
+                <i class="fas fa-chart-line"></i> Ekonomi
+            </button>
+            <button class="category-btn" data-category="sports">
+                <i class="fas fa-futbol"></i> Spor
+            </button>
+            <button class="category-btn" data-category="health">
+                <i class="fas fa-heart-pulse"></i> Sağlık
+            </button>
+            <button class="category-btn" data-category="entertainment">
+                <i class="fas fa-film"></i> Eğlence
+            </button>
+            <button class="category-btn" data-category="world">
+                <i class="fas fa-earth-americas"></i> Dünya
+            </button>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="nav-tabs">
+            <button class="nav-tab active" data-type="all">
+                <i class="fas fa-newspaper"></i> Tüm Haberler
+            </button>
+            <button class="nav-tab" data-type="turkey">
                 <i class="fas fa-flag"></i> Türkiye
             </button>
-            <button class="nav-tab" data-category="world">
-                <i class="fas fa-earth-americas"></i> Dünya
+            <button class="nav-tab" data-type="world">
+                <i class="fas fa-globe"></i> Dünya
             </button>
         </div>
 
@@ -426,10 +541,16 @@
             </div>
         </div>
 
-        <!-- Reklam - Üst -->
+        <!-- Reklam - Üst Banner -->
         <div class="ad-section">
             <div class="ad-label">Sponsor</div>
             <div id="container-8fc66e8b9e52650daeec923d8057de9a"></div>
+        </div>
+
+        <!-- Reklam - Yan Banner -->
+        <div class="ad-section-small">
+            <div class="ad-label">Önerilen</div>
+            <script type='text/javascript' src='//pl27754061.revenuecpmgate.com/ea/57/e3/ea57e37f75fb301a068f40848717c15e.js'></script>
         </div>
 
         <!-- Haber Grid -->
@@ -440,16 +561,65 @@
             </div>
         </div>
 
-        <!-- Reklam - Orta -->
-        <div class="ad-section">
+        <!-- Reklam - Haberler Arası 1 -->
+        <div class="ad-section-small">
             <div class="ad-label">Reklam</div>
+            <div id="container-8fc66e8b9e52650daeec923d8057de9a"></div>
+        </div>
+
+        <!-- İletişim Bölümü -->
+        <div class="contact-section">
+            <h3 class="contact-title">İletişim & Destek</h3>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <strong>E-posta</strong>
+                        <div>info@gythaber.com</div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div>
+                        <strong>Telefon</strong>
+                        <div>+90 212 555 55 55</div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <strong>Adres</strong>
+                        <div>İstanbul, Türkiye</div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div>
+                        <strong>Çalışma Saatleri</strong>
+                        <div>09:00 - 18:00</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reklam - Orta Banner -->
+        <div class="ad-section">
+            <div class="ad-label">Sponsor İçerik</div>
             <script type='text/javascript' src='//pl27754061.revenuecpmgate.com/ea/57/e3/ea57e37f75fb301a068f40848717c15e.js'></script>
         </div>
 
         <!-- Footer -->
         <footer class="footer">
-            <h3>GYT HABER - Canlı Haber Akışı</h3>
-            <p>En güncel haberler tek tık uzağınızda</p>
+            <h3 style="color: #2e7d32; margin-bottom: 15px;">GYT HABER - Canlı Haber Akışı</h3>
+            <p style="color: #666; margin-bottom: 20px;">En güncel haberler tek tık uzağınızda</p>
             
             <div class="telegram-buttons">
                 <a href="https://t.me/sansursuzv" class="telegram-btn" target="_blank">
@@ -466,7 +636,7 @@
                 </a>
             </div>
             
-            <div style="margin-top: 20px; color: #666; font-size: 12px;">
+            <div style="margin-top: 20px; color: #4caf50; font-size: 12px;">
                 &copy; 2023 GYT HABER - Tüm hakları saklıdır
             </div>
         </footer>
@@ -479,12 +649,25 @@
             <div id="modalContent">
                 <!-- Modal içeriği JavaScript ile doldurulacak -->
             </div>
+            
+            <!-- Modal İçi Reklam - Üst -->
+            <div class="ad-section-small" style="margin: 20px; border-radius: 10px;">
+                <div class="ad-label">Sponsor</div>
+                <div id="container-8fc66e8b9e52650daeec923d8057de9a"></div>
+            </div>
+
+            <!-- Modal İçi Reklam - Alt -->
+            <div class="ad-section-small" style="margin: 20px; border-radius: 10px;">
+                <div class="ad-label">Reklam</div>
+                <script type='text/javascript' src='//pl27754061.revenuecpmgate.com/ea/57/e3/ea57e37f75fb301a068f40848717c15e.js'></script>
+            </div>
         </div>
     </div>
 
     <script>
         // Basit ve Hızlı Haber Sistemi
         let currentCategory = 'all';
+        let currentType = 'all';
         let newsData = [];
 
         // Sayfa Yüklendiğinde
@@ -495,12 +678,22 @@
 
         // Event Listeners
         function setupEventListeners() {
+            // Kategori değiştirme
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    currentCategory = this.getAttribute('data-category');
+                    loadNews();
+                });
+            });
+
             // Tab değiştirme
             document.querySelectorAll('.nav-tab').forEach(tab => {
                 tab.addEventListener('click', function() {
                     document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
                     this.classList.add('active');
-                    currentCategory = this.getAttribute('data-category');
+                    currentType = this.getAttribute('data-type');
                     loadNews();
                 });
             });
@@ -538,22 +731,23 @@
         // Mock Haber Üretimi
         function generateMockNews() {
             const categories = [
-                { name: 'Teknoloji', icon: 'fas fa-microchip', color: '#667eea' },
-                { name: 'Ekonomi', icon: 'fas fa-chart-line', color: '#4ecdc4' },
-                { name: 'Spor', icon: 'fas fa-futbol', color: '#45b7d1' },
-                { name: 'Sağlık', icon: 'fas fa-heart-pulse', color: '#ff6b6b' },
-                { name: 'Eğlence', icon: 'fas fa-film', color: '#ffa502' },
-                { name: 'Dünya', icon: 'fas fa-globe', color: '#2ed573' }
+                { name: 'technology', display: 'Teknoloji', icon: 'fas fa-microchip', color: '#4caf50' },
+                { name: 'economy', display: 'Ekonomi', icon: 'fas fa-chart-line', color: '#388e3c' },
+                { name: 'sports', display: 'Spor', icon: 'fas fa-futbol', color: '#2e7d32' },
+                { name: 'health', display: 'Sağlık', icon: 'fas fa-heart-pulse', color: '#1b5e20' },
+                { name: 'entertainment', display: 'Eğlence', icon: 'fas fa-film', color: '#4caf50' },
+                { name: 'world', display: 'Dünya', icon: 'fas fa-globe', color: '#388e3c' }
             ];
 
             const news = [];
             
             categories.forEach((category, index) => {
-                for (let i = 1; i <= 4; i++) {
+                for (let i = 1; i <= 6; i++) {
                     news.push({
-                        id: `${category.name.toLowerCase()}_${i}`,
-                        title: getRandomTitle(category.name),
-                        category: category.name,
+                        id: `${category.name}_${i}`,
+                        title: getRandomTitle(category.display),
+                        category: category.display,
+                        categoryType: category.name,
                         icon: category.icon,
                         color: category.color,
                         image: `https://picsum.photos/400/250?random=${index}${i}`,
@@ -561,7 +755,8 @@
                         content: getRandomContent(),
                         time: getRandomTime(),
                         source: 'GYT Haber',
-                        trending: i === 1
+                        trending: i === 1,
+                        type: Math.random() > 0.5 ? 'turkey' : 'world'
                     });
                 }
             });
@@ -576,37 +771,49 @@
                     "Yapay Zeka Devrimi Başlıyor",
                     "Yeni Nesil Akıllı Telefonlar",
                     "Siber Güvenlikte Büyük Atılım",
-                    "Teknoloji Devi Yatırım Açıkladı"
+                    "Teknoloji Devi Yatırım Açıkladı",
+                    "Yapay Zeka Sağlık Sektörünü Dönüştürüyor",
+                    "Blockchain Teknolojisi Yaygınlaşıyor"
                 ],
                 'Ekonomi': [
                     "Borsa Rekor Kırdı",
                     "Merkez Bankası Kararı Bekleniyor",
                     "Döviz Piyasasında Hareketlilik",
-                    "Yatırımcıların Gözü Türkiye'de"
+                    "Yatırımcıların Gözü Türkiye'de",
+                    "Enflasyon Verileri Açıklandı",
+                    "Dijital Para Birimleri Yükselişte"
                 ],
                 'Spor': [
                     "Şampiyonlar Ligi'nde Heyecan",
                     "Transfer Dönemi Başlıyor",
                     "Milli Takım Kampı Sürüyor",
-                    "Spor Toto Süper Lig'de Kritik Maç"
+                    "Spor Toto Süper Lig'de Kritik Maç",
+                    "Olimpiyat Hazırlıkları Hızlandı",
+                    "Yerli Sporcular Dünya Rekoru Kırdı"
                 ],
                 'Sağlık': [
                     "Yeni Tedavi Yöntemi Geliştirildi",
                     "Sağlık Bakanlığı'ndan Açıklama",
                     "Dijital Sağlık Uygulamaları Yaygınlaşıyor",
-                    "Kronik Hastalıklarla Mücadele"
+                    "Kronik Hastalıklarla Mücadele",
+                    "Pandemi Sonrası Sağlık Sistemi",
+                    "Yapay Zeka Destekli Teşhis Sistemleri"
                 ],
                 'Eğlence': [
                     "Yerli Film Gişe Rekoru Kırdı",
                     "Ünlü Sanatçı Yeni Albümünü Duyurdu",
                     "Dizi ve Film Platformları Yarışıyor",
-                    "Konser ve Festival Sezonu Başlıyor"
+                    "Konser ve Festival Sezonu Başlıyor",
+                    "Yerli Diziler Dünya Pazarında",
+                    "Sosyal Medya Trendleri Değişiyor"
                 ],
                 'Dünya': [
                     "Küresel Ekonomi Toplantısı",
                     "Uluslararası İlişkilerde Gelişmeler",
                     "İklim Değişikliği Zirvesi",
-                    "Dünya Liderlerinden Açıklamalar"
+                    "Dünya Liderlerinden Açıklamalar",
+                    "Uluslararası Ticaret Anlaşmaları",
+                    "Küresel Teknoloji Trendleri"
                 ]
             };
 
@@ -619,7 +826,9 @@
                 "Son gelişmeler ışığında uzmanlar önemli açıklamalarda bulundu. Detaylar haberimizde...",
                 "Yaşanan gelişme sektörü derinden etkiledi. İşte tüm detaylar...",
                 "Uzmanlar bu gelişmenin önümüzdeki dönemi şekillendireceğini belirtiyor...",
-                "Yapılan açıklamalar piyasalarda hareketliliğe neden oldu. Detaylar için tıklayın..."
+                "Yapılan açıklamalar piyasalarda hareketliliğe neden oldu. Detaylar için tıklayın...",
+                "Son dakika gelişmeleri ile gündeme gelen bu haber merakla takip ediliyor...",
+                "Uzman analistler konu hakkında detaylı değerlendirmelerde bulundu..."
             ];
             return excerpts[Math.floor(Math.random() * excerpts.length)];
         }
@@ -627,16 +836,17 @@
         function getRandomContent() {
             return `
                 <div style="padding: 30px;">
-                    <h2 style="color: #2d3748; margin-bottom: 20px; font-size: 24px;">Haber Detayları</h2>
+                    <h2 style="color: #2e7d32; margin-bottom: 20px; font-size: 24px;">Haber Detayları</h2>
                     <p style="margin-bottom: 15px; line-height: 1.6;">Son dakika gelişmeleri ile gündeme gelen bu haber, sektörü derinden etkileyecek nitelikte. Uzmanlar konu hakkında önemli açıklamalarda bulundu.</p>
                     <p style="margin-bottom: 15px; line-height: 1.6;">Yapılan araştırmalar ve analizler, bu gelişmenin önümüzdeki dönemde daha da etkili olacağını gösteriyor. Sektör temsilcileri konuya ilişkin görüşlerini paylaştı.</p>
                     <p style="margin-bottom: 15px; line-height: 1.6;">Gelişmeleri yakından takip eden analistler, bu durumun piyasalar üzerinde olumlu etkiler yaratacağını belirtiyor.</p>
+                    <p style="margin-bottom: 15px; line-height: 1.6;">Konuyla ilgili detaylı bilgi almak için uzman görüşlerine başvurduk. İşte tüm detaylar...</p>
                 </div>
             `;
         }
 
         function getRandomTime() {
-            const times = ['5 dk', '15 dk', '30 dk', '1 sa', '2 sa', '4 sa'];
+            const times = ['5 dk', '15 dk', '30 dk', '1 sa', '2 sa', '4 sa', '6 sa', '8 sa'];
             return times[Math.floor(Math.random() * times.length)] + ' önce';
         }
 
@@ -645,12 +855,14 @@
             const grid = document.getElementById('newsGrid');
             let filteredNews = newsData;
 
-            if (currentCategory === 'turkey') {
-                filteredNews = newsData.filter(news => 
-                    ['Teknoloji', 'Ekonomi', 'Spor', 'Sağlık'].includes(news.category)
-                );
-            } else if (currentCategory === 'world') {
-                filteredNews = newsData.filter(news => news.category === 'Dünya');
+            // Kategori filtreleme
+            if (currentCategory !== 'all') {
+                filteredNews = filteredNews.filter(news => news.categoryType === currentCategory);
+            }
+
+            // Tür filtreleme
+            if (currentType !== 'all') {
+                filteredNews = filteredNews.filter(news => news.type === currentType);
             }
 
             grid.innerHTML = filteredNews.map(news => `
@@ -714,11 +926,11 @@
                             <i class="fas fa-clock"></i> ${news.time}
                         </div>
                     </div>
-                    <h2 style="color: #2d3748; margin-bottom: 20px; font-size: 24px; line-height: 1.4;">${news.title}</h2>
+                    <h2 style="color: #2e7d32; margin-bottom: 20px; font-size: 24px; line-height: 1.4;">${news.title}</h2>
                     <div style="color: #666; line-height: 1.6; margin-bottom: 30px;">
                         ${news.content}
                     </div>
-                    <div style="border-top: 1px solid #e2e8f0; padding-top: 20px; color: #666; font-size: 14px;">
+                    <div style="border-top: 1px solid #e8f5e8; padding-top: 20px; color: #666; font-size: 14px;">
                         Kaynak: ${news.source}
                     </div>
                 </div>
