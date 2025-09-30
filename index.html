@@ -632,7 +632,7 @@
                     <i class="fab fa-telegram"></i> Son Dakika
                 </a>
                 <a href="https://t.me/sansursuzhabere" class="telegram-btn" target="_blank">
-                    <i class="fab fa-telegram"></i> Sansürsuz Habere
+                    <i class="fab fa-telegram"></i> Sansürsüz Habere
                 </a>
             </div>
             
@@ -707,90 +707,175 @@
             });
         }
 
-        // Haberleri Yükle
+        // Haberleri Yükle - Web Scraping ile
         async function loadNews() {
             const newsGrid = document.getElementById('newsGrid');
             
             try {
-                // Örnek haber verileri
-                newsData = [
-                    {
-                        id: 1,
-                        title: "Türkiye'de Teknoloji Sektörü Rekor Büyüme Kaydetti",
-                        excerpt: "Yerli teknoloji firmaları son çeyrekte %25 büyüme ile rekor kırdı. Yapay zeka ve siber güvenlik alanında önemli atılımlar gerçekleştirildi.",
-                        category: "business",
-                        type: "turkey",
-                        image: "https://picsum.photos/400/220?random=1",
-                        time: "15 dakika önce",
-                        content: "Türkiye'nin teknoloji sektörü son çeyrekte %25 büyüme kaydederek rekor kırdı. Yerli yazılım firmalarının ihracatı geçen yıla göre %60 arttı. Özellikle yapay zeka, siber güvenlik ve oyun geliştirme alanlarındaki başarılar dikkat çekiyor. Hükümetin Ar-Ge destekleri ve genç girişimcilere sağlanan teşviklerin bu büyümeye katkı sağladığı belirtiliyor.",
-                        source: "GYT Teknoloji"
-                    },
-                    {
-                        id: 2,
-                        title: "Dolar ve Euro'da Tarihi Düşüş: Merkez Bankası Kararı Etkili Oldu",
-                        excerpt: "Merkez Bankası'nın beklenen faiz kararı sonrası döviz kurlarında tarihi düşüş yaşandı. Piyasalar olumlu tepki verdi.",
-                        category: "business",
-                        type: "turkey",
-                        image: "https://picsum.photos/400/220?random=2",
-                        time: "1 saat önce",
-                        content: "Merkez Bankası'nın beklenen faiz kararı sonrası dolar ve euro kurlarında tarihi düşüş yaşandı. Dolar/TL kuru iki yılın en düşük seviyesine gerilerken, euro da benzer bir performans sergiledi. Piyasa uzmanları, önümüzdeki dönemde kurların mevcut seviyelerde istikrarlı seyretmesini bekliyor.",
-                        source: "GYT Ekonomi"
-                    },
-                    {
-                        id: 3,
-                        title: "Süper Lig'de Tarihi Final: İki Dev Takım Şampiyonluk İçin Karşı Karşıya",
-                        excerpt: "Süper Lig'de sezonun son maçında iki büyük takım şampiyonluk için mücadele edecek. Taraftarlar heyecanla maçı bekliyor.",
-                        category: "sports",
-                        type: "turkey",
-                        image: "https://picsum.photos/400/220?random=3",
-                        time: "2 saat önce",
-                        content: "Süper Lig'de tarihi bir final heyecanı yaşanıyor. Sezonun son maçında lider iki takım şampiyonluk için doğrudan mücadele edecek. İki takım arasındaki puan farkı sadece 1 puana indi. Kazanan takım lig şampiyonu olacak.",
-                        source: "GYT Spor"
-                    },
-                    {
-                        id: 4,
-                        title: "Bilim İnsanları Kansere Çare Buldu: Yeni Tedavi Yöntemi Başarıya Ulaştı",
-                        excerpt: "Yerli bilim insanları geliştirdikleri yöntemle kanser hücrelerini yok etmeyi başardı. Tedavi klinik deneylerde %95 başarı sağladı.",
-                        category: "health",
-                        type: "world",
-                        image: "https://picsum.photos/400/220?random=4",
-                        time: "3 saat önce",
-                        content: "Yerli bilim insanları kanser tedavisinde çığır açacak bir yöntem geliştirdi. Yeni tedavi yöntemi, kanser hücrelerini hedef alarak sağlıklı hücrelere zarar vermeden tümörleri yok etmeyi başarıyor.",
-                        source: "GYT Sağlık"
-                    },
-                    {
-                        id: 5,
-                        title: "Yerli Film Gişe Rekorları Kırdı: İzleyiciler Bayıldı",
-                        excerpt: "Yerli yapım film gişe rekorları kırarak tüm zamanların en çok izlenen filmi oldu. Eleştirmenlerden tam not aldı.",
-                        category: "entertainment",
-                        type: "turkey",
-                        image: "https://picsum.photos/400/220?random=5",
-                        time: "4 saat önce",
-                        content: "Yerli sinemanın gururu olan film, gişe rekorları kırarak tüm zamanların en çok izlenen Türk filmi oldu. Film, ilk hafta sonunda 2 milyon izleyiciye ulaşarak büyük bir başarıya imza attı.",
-                        source: "GYT Eğlence"
-                    },
-                    {
-                        id: 6,
-                        title: "NASA'dan Tarihi Keşif: Mars'ta Yaşam İzi Bulundu",
-                        excerpt: "NASA'nın Mars keşif aracı Kızıl Gezegen'de yaşam izlerine rastladı. Bilim dünyasında büyük heyecan yaşanıyor.",
-                        category: "world",
-                        type: "world",
-                        image: "https://picsum.photos/400/220?random=6",
-                        time: "5 saat önce",
-                        content: "NASA'nın Mars'taki keşif aracı Perseverance, Kızıl Gezegen'de mikrobiyal yaşam izlerine rastladı. Toprak örneklerinde organik bileşikler tespit eden bilim insanları, bu keşfin Mars'ta geçmişte yaşam olabileceğine dair en güçlü kanıt olduğunu belirtiyor.",
-                        source: "GYT Bilim"
-                    }
-                ];
+                // Web Scraping ile haber çekme
+                const scrapedNews = await scrapeNews();
+                newsData = scrapedNews;
                 
                 // Breaking News güncelle
                 updateBreakingNews();
                 
                 // Haberleri göster
                 displayNews(newsData);
+                
             } catch (error) {
                 console.error('Haber yükleme hatası:', error);
-                loadSampleNews();
+                showError('Haberler şu anda yüklenemiyor. Lütfen daha sonra tekrar deneyin.');
             }
+        }
+
+        // Web Scraping Fonksiyonu - Geliştirilmiş
+        async function scrapeNews() {
+            const newsItems = [];
+            
+            try {
+                // Haber kaynakları
+                const sources = [
+                    {
+                        name: 'Hürriyet',
+                        url: 'https://www.hurriyet.com.tr',
+                        selectors: ['h3', '.news-title', '.title', 'a']
+                    },
+                    {
+                        name: 'Milliyet', 
+                        url: 'https://www.milliyet.com.tr',
+                        selectors: ['.news-title', 'h3', '.title', 'a']
+                    },
+                    {
+                        name: 'NTV',
+                        url: 'https://www.ntv.com.tr',
+                        selectors: ['.news-title', 'h3', '.title', 'a']
+                    },
+                    {
+                        name: 'Sözcü',
+                        url: 'https://www.sozcu.com.tr',
+                        selectors: ['h3', '.news-title', '.title', 'a']
+                    }
+                ];
+
+                // Her kaynaktan haber çek
+                for (const source of sources) {
+                    try {
+                        // CORS proxy kullan (alternatif proxy'ler)
+                        const proxyUrls = [
+                            'https://api.allorigins.win/raw?url=',
+                            'https://corsproxy.io/?',
+                            'https://cors-anywhere.herokuapp.com/'
+                        ];
+                        
+                        let success = false;
+                        
+                        for (const proxyUrl of proxyUrls) {
+                            try {
+                                const response = await fetch(proxyUrl + encodeURIComponent(source.url), {
+                                    method: 'GET',
+                                    headers: {
+                                        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+                                        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+                                    }
+                                });
+                                
+                                if (response.ok) {
+                                    const html = await response.text();
+                                    const parser = new DOMParser();
+                                    const doc = parser.parseFromString(html, 'text/html');
+                                    
+                                    // Farklı selector'ları dene
+                                    for (const selector of source.selectors) {
+                                        const elements = doc.querySelectorAll(selector);
+                                        elements.forEach((element, index) => {
+                                            if (index < 6 && newsItems.length < 20) {
+                                                const title = element.textContent?.trim();
+                                                if (title && title.length > 20 && title.length < 200) {
+                                                    // Benzersiz haber kontrolü
+                                                    const isDuplicate = newsItems.some(item => 
+                                                        item.title.includes(title.substring(0, 30)) || 
+                                                        title.includes(item.title.substring(0, 30))
+                                                    );
+                                                    
+                                                    if (!isDuplicate) {
+                                                        newsItems.push({
+                                                            id: newsItems.length + 1,
+                                                            title: title,
+                                                            excerpt: `${title.substring(0, 120)}...`,
+                                                            category: getCategoryFromTitle(title),
+                                                            type: Math.random() > 0.3 ? 'turkey' : 'world',
+                                                            image: `https://picsum.photos/400/220?random=${newsItems.length + 1}`,
+                                                            time: getRandomTime(),
+                                                            content: `${title}. Bu haber GYT HABER tarafından ${source.name} kaynağından derlenmiştir. Detaylı bilgi için kaynak siteyi ziyaret edebilirsiniz.`,
+                                                            source: source.name,
+                                                            url: source.url
+                                                        });
+                                                    }
+                                                }
+                                            }
+                                        });
+                                    }
+                                    
+                                    success = true;
+                                    break; // Başarılı proxy bulundu, diğerlerini deneme
+                                }
+                            } catch (proxyError) {
+                                console.log(`${proxyUrl} çalışmıyor, diğer proxy deneniyor...`);
+                                continue;
+                            }
+                        }
+                        
+                        if (!success) {
+                            console.log(`${source.name} için hiçbir proxy çalışmıyor`);
+                        }
+                        
+                        // Rate limiting
+                        await new Promise(resolve => setTimeout(resolve, 1000));
+                        
+                    } catch (sourceError) {
+                        console.log(`${source.name} haberleri çekilemedi:`, sourceError.message);
+                        continue;
+                    }
+                }
+                
+                // Eğer hiç haber çekilemezse hata fırlat
+                if (newsItems.length === 0) {
+                    throw new Error('Hiçbir kaynaktan haber çekilemedi');
+                }
+                
+                return newsItems;
+                
+            } catch (error) {
+                console.error('Scraping hatası:', error);
+                throw error; // Hata fırlat, fallback yok
+            }
+        }
+
+        // Başlıktan kategori tahmini
+        function getCategoryFromTitle(title) {
+            const titleLower = title.toLowerCase();
+            
+            if (titleLower.includes('spor') || titleLower.includes('futbol') || titleLower.includes('basketbol') || titleLower.includes('maç')) {
+                return 'sports';
+            } else if (titleLower.includes('ekonomi') || titleLower.includes('dolar') || titleLower.includes('euro') || titleLower.includes('borsa')) {
+                return 'business';
+            } else if (titleLower.includes('sağlık') || titleLower.includes('hastane') || titleLower.includes('doktor') || titleLower.includes('tedavi')) {
+                return 'health';
+            } else if (titleLower.includes('sinema') || titleLower.includes('dizi') || titleLower.includes('film') || titleLower.includes('oyuncu')) {
+                return 'entertainment';
+            } else if (titleLower.includes('dünya') || titleLower.includes('abd') || titleLower.includes('rusya') || titleLower.includes('avrupa')) {
+                return 'world';
+            } else if (titleLower.includes('siyaset') || titleLower.includes('meclis') || titleLower.includes('seçim') || titleLower.includes('parti')) {
+                return 'politics';
+            } else {
+                return 'politics'; // Varsayılan
+            }
+        }
+
+        // Rastgele zaman oluştur
+        function getRandomTime() {
+            const times = ['15 dakika önce', '1 saat önce', '2 saat önce', '3 saat önce', '4 saat önce', '5 saat önce'];
+            return times[Math.floor(Math.random() * times.length)];
         }
 
         // Breaking News güncelle
@@ -806,15 +891,7 @@
             const newsGrid = document.getElementById('newsGrid');
             
             if (news.length === 0) {
-                newsGrid.innerHTML = `
-                    <div class="error-message">
-                        <div class="error-icon">
-                            <i class="fas fa-exclamation-triangle"></i>
-                        </div>
-                        <h3>Henüz haber bulunmuyor</h3>
-                        <p>Seçtiğiniz kriterlere uygun haber bulunamadı.</p>
-                    </div>
-                `;
+                showError('Henüz haber bulunmuyor. Lütfen daha sonra tekrar deneyin.');
                 return;
             }
             
@@ -861,6 +938,23 @@
             });
             
             newsGrid.innerHTML = html;
+        }
+
+        // Hata mesajı göster
+        function showError(message) {
+            const newsGrid = document.getElementById('newsGrid');
+            newsGrid.innerHTML = `
+                <div class="error-message">
+                    <div class="error-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3>Haberler Yüklenemedi</h3>
+                    <p>${message}</p>
+                    <button onclick="loadNews()" style="margin-top: 15px; padding: 10px 20px; background: #4caf50; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;">
+                        <i class="fas fa-redo"></i> Tekrar Dene
+                    </button>
+                </div>
+            `;
         }
 
         // Kategori ismini döndür
